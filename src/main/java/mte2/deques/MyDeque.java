@@ -8,22 +8,39 @@ package mte2.deques;
 // import java.util.Iterator;
 
 public class MyDeque {
-// public class MyDeque<E> implements Deque<E> {
-    
-    // private final LinkedList<E> list;
-    // public MyDeque() {    list = new LinkedList<>();    }
+ public class MyDeque<E> implements Deque<E> {
+     private int size;
+     private final LinkedList<E> list;
+     public MyDeque() {    list = new LinkedList<>();   size = 0; }
 
-    // ... for enqueueFront ...
+   public void enqueueFront(E element){
+        if(this.size == list.length){
+            list.copyOf(this.size * 2);
+        }
+        list.append(element, this.size);
+   }
 
-    // ... for enqueueBack ...
+   public void enqueueBack(E elemant){
+     if(this.size == list.length){
+            list.copyOf(this.size * 2);
+        }
+        list.append(element, 0);
+   }
+   
 
-    // ... for dequeueFront ...
+   public E dequeueFront(E elemant){
+     remove = list
+   }
 
     // ... for dequeueBack ... 
 
-    // ... for size ...
+    public int size(){
+        return this.size;
+    }
 
-    // ... for iterator ...
+    public Iterator<E> Iterator(){
+
+    }
 
 
     public static void main(String[] args) { 
